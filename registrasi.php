@@ -7,10 +7,10 @@ include "config/kode_auto.php";
 include "config/fungsi_combobox.php";
 include "config/fungsi_nip.php";
 
-$aksi="modul/pegawai/aksi_pegawai.php";
-switch($_GET[act]){
-	default:
-echo "<h2 class='hd-r'>REGISTRASI PEGAWAI</h2>
+$aksi = "modul/pegawai/aksi_pegawai.php";
+switch ($_GET[act]) {
+    default:
+        echo "<h2 class='hd-r'>REGISTRASI PEGAWAI</h2>
 	<form action='$aksi?module=pegawai&act=input' method='post' enctype='multipart/form-data' class='f-r' >
 	<table class='tabelform tabpad'>
 	<tr>
@@ -29,11 +29,10 @@ echo "<h2 class='hd-r'>REGISTRASI PEGAWAI</h2>
 	<td>Tanggal Lahir</td><td>:</td><td>
 	<select name='hari'>
                 <option value='none' selected='selected'>Tgl*</option>";
-			for($h=1; $h<=31; $h++) 
-			{ 
-				echo"<option value=",$h,">",$h,"</option>";
-			} 
-	echo"</select>
+        for ($h = 1; $h <= 31; $h++) {
+            echo "<option value=", $h, ">", $h, "</option>";
+        }
+        echo "</select>
 	<select name='bulan'>
             	<option value='none' selected='selected'>Bulan*</option>
 				<option value='1'>Januari</option>
@@ -51,13 +50,12 @@ echo "<h2 class='hd-r'>REGISTRASI PEGAWAI</h2>
 			</select>
 	<select name='tahun'>
             <option value='none' selected='selected'>Tahun*</option>";
-			$now =  date("Y");
-			$saiki = 1965;
-			for($l=$saiki; $l<=$now; $l++)
-			{
-				echo"<option value=",$l,">",$l,"</option>";
-			}	
-	echo "</select>
+        $now = date("Y");
+        $saiki = 1965;
+        for ($l = $saiki; $l <= $now; $l++) {
+            echo "<option value=", $l, ">", $l, "</option>";
+        }
+        echo "</select>
 	</td>
 	</tr>
 	
@@ -73,11 +71,10 @@ echo "<h2 class='hd-r'>REGISTRASI PEGAWAI</h2>
 	<td>Tanggal Masuk</td><td>:</td><td>
 	<select name='hm'>
                 <option value='none' selected='selected'>Tgl*</option>";
-			for($h=1; $h<=31; $h++) 
-			{ 
-				echo"<option value=",$h,">",$h,"</option>";
-			} 
-	echo"</select>
+        for ($h = 1; $h <= 31; $h++) {
+            echo "<option value=", $h, ">", $h, "</option>";
+        }
+        echo "</select>
 	<select name='bm'>
             	<option value='none' selected='selected'>Bulan*</option>
 				<option value='1'>Januari</option>
@@ -95,34 +92,33 @@ echo "<h2 class='hd-r'>REGISTRASI PEGAWAI</h2>
 			</select>
 	<select name='tm'>
             <option value='none' selected='selected'>Tahun*</option>";
-			$now =  date("Y");
-			$saiki = 2000;
-			for($l=$saiki; $l<=$now; $l++)
-			{
-				echo"<option value=",$l,">",$l,"</option>";
-			}	
-	echo "</select>
+        $now = date("Y");
+        $saiki = 2000;
+        for ($l = $saiki; $l <= $now; $l++) {
+            echo "<option value=", $l, ">", $l, "</option>";
+        }
+        echo "</select>
 	</td>
 	</tr>
 	
 	<tr>
 	<td>Bagian</td><td>:</td><td><select name='bagian'>
 	<option value='' selected >Pilih Bagian</option>";
-	$jab=mysql_query("select * from bagian");
-	while($j=mysql_fetch_array($jab)){
-	echo "<option value='$j[id_bag]'>$j[n_bag]</option>";
-	}
-	echo "</select></td>
+        $jab = mysqli_query($con, "select * from bagian");
+        while ($j = mysqli_fetch_array($jab)) {
+            echo "<option value='$j[id_bag]'>$j[n_bag]</option>";
+        }
+        echo "</select></td>
 	</tr>
 	
 	<tr>
 	<td>Jabatan</td><td>:</td><td><select name='jabatan'>	
 	<option value='' selected >Pilih Jabatan</option>";
-	$jab=mysql_query("select * from jabatan");
-	while($j=mysql_fetch_array($jab)){
-	echo "<option value='$j[id_jab]'  >$j[n_jab]</option>";
-	}
-	echo "</select></td>
+        $jab = mysqli_query($con, "select * from jabatan");
+        while ($j = mysqli_fetch_array($jab)) {
+            echo "<option value='$j[id_jab]'  >$j[n_jab]</option>";
+        }
+        echo "</select></td>
 	</tr>
 	
 	
@@ -138,8 +134,8 @@ echo "<h2 class='hd-r'>REGISTRASI PEGAWAI</h2>
 	</tr>
 	</table>
 	</form>
-	"; 
-	}
+	";
+}
 ?>
 
 

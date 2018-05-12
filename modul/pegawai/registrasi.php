@@ -1,29 +1,28 @@
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>:: Sistem Perencanaan Karir Dinas Kependudukan &amp; Pencatatan Sipil :::</title>
-<link rel="stylesheet" href="css/style.css" type="text/css"  />
-<link rel="shortcut icon" href="images/logobelu.jpg"  />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>:: Sistem Perencanaan Karir Dinas Kependudukan &amp; Pencatatan Sipil :::</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="shortcut icon" href="images/logobelu.jpg"/>
 </head>
 
 <body>
 <div id="cont-pegawai">
-<?php
-include "config/koneksi.php";
+    <?php
+    include "config/koneksi.php";
 
-include "config/fungsi_indotgl.php";
-include "config/class_paging.php";
-include "config/kode_auto.php";
-include "config/fungsi_combobox.php";
-include "config/fungsi_nip.php";
+    include "config/fungsi_indotgl.php";
+    include "config/class_paging.php";
+    include "config/kode_auto.php";
+    include "config/fungsi_combobox.php";
+    include "config/fungsi_nip.php";
 
-$aksi="modul/pegawai/aksi_pegawai.php";
+    $aksi = "modul/pegawai/aksi_pegawai.php";
 
-echo "<h2 class='hd-r'>REGISTRASI PEGAWAI</h2>
+    echo "<h2 class='hd-r'>REGISTRASI PEGAWAI</h2>
 	<form action='$aksi?module=pegawai&act=input' method='post' enctype='multipart/form-data' class='f-r' >
 	<table class='tabelform tabpad'>
 	<tr>
@@ -42,11 +41,10 @@ echo "<h2 class='hd-r'>REGISTRASI PEGAWAI</h2>
 	<td>Tanggal Lahir</td><td>:</td><td>
 	<select name='hari'>
                 <option value='none' selected='selected'>Tgl*</option>";
-			for($h=1; $h<=31; $h++) 
-			{ 
-				echo"<option value=",$h,">",$h,"</option>";
-			} 
-	echo"</select>
+    for ($h = 1; $h <= 31; $h++) {
+        echo "<option value=", $h, ">", $h, "</option>";
+    }
+    echo "</select>
 	<select name='bulan'>
             	<option value='none' selected='selected'>Bulan*</option>
 				<option value='1'>Januari</option>
@@ -64,13 +62,12 @@ echo "<h2 class='hd-r'>REGISTRASI PEGAWAI</h2>
 			</select>
 	<select name='tahun'>
             <option value='none' selected='selected'>Tahun*</option>";
-			$now =  date("Y");
-			$saiki = 1965;
-			for($l=$saiki; $l<=$now; $l++)
-			{
-				echo"<option value=",$l,">",$l,"</option>";
-			}	
-	echo "</select>
+    $now = date("Y");
+    $saiki = 1965;
+    for ($l = $saiki; $l <= $now; $l++) {
+        echo "<option value=", $l, ">", $l, "</option>";
+    }
+    echo "</select>
 	</td>
 	</tr>
 	
@@ -86,11 +83,10 @@ echo "<h2 class='hd-r'>REGISTRASI PEGAWAI</h2>
 	<td>Tanggal Masuk</td><td>:</td><td>
 	<select name='hm'>
                 <option value='none' selected='selected'>Tgl*</option>";
-			for($h=1; $h<=31; $h++) 
-			{ 
-				echo"<option value=",$h,">",$h,"</option>";
-			} 
-	echo"</select>
+    for ($h = 1; $h <= 31; $h++) {
+        echo "<option value=", $h, ">", $h, "</option>";
+    }
+    echo "</select>
 	<select name='bm'>
             	<option value='none' selected='selected'>Bulan*</option>
 				<option value='1'>Januari</option>
@@ -108,34 +104,33 @@ echo "<h2 class='hd-r'>REGISTRASI PEGAWAI</h2>
 			</select>
 	<select name='tm'>
             <option value='none' selected='selected'>Tahun*</option>";
-			$now =  date("Y");
-			$saiki = 2000;
-			for($l=$saiki; $l<=$now; $l++)
-			{
-				echo"<option value=",$l,">",$l,"</option>";
-			}	
-	echo "</select>
+    $now = date("Y");
+    $saiki = 2000;
+    for ($l = $saiki; $l <= $now; $l++) {
+        echo "<option value=", $l, ">", $l, "</option>";
+    }
+    echo "</select>
 	</td>
 	</tr>
 	
 	<tr>
 	<td>Bagian</td><td>:</td><td><select name='bagian'>
 	<option value='' selected >Pilih Bagian</option>";
-	$jab=mysql_query("select * from bagian");
-	while($j=mysql_fetch_array($jab)){
-	echo "<option value='$j[id_bag]'>$j[n_bag]</option>";
-	}
-	echo "</select></td>
+    $jab = mysqli_query($con, "select * from bagian");
+    while ($j = mysqli_fetch_array($jab)) {
+        echo "<option value='$j[id_bag]'>$j[n_bag]</option>";
+    }
+    echo "</select></td>
 	</tr>
 	
 	<tr>
 	<td>Jabatan</td><td>:</td><td><select name='jabatan'>	
 	<option value='' selected >Pilih Jabatan</option>";
-	$jab=mysql_query("select * from jabatan");
-	while($j=mysql_fetch_array($jab)){
-	echo "<option value='$j[id_jab]'  >$j[n_jab]</option>";
-	}
-	echo "</select></td>
+    $jab = mysqli_query($con, "select * from jabatan");
+    while ($j = mysqli_fetch_array($jab)) {
+        echo "<option value='$j[id_jab]'  >$j[n_jab]</option>";
+    }
+    echo "</select></td>
 	</tr>
 	
 	

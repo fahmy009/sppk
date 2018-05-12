@@ -1,119 +1,130 @@
 /* CSS Document */
-body{
-	background-color:#FFFFFF;
-	font-family:"Tahoma";
-	font-size:12px;
-	color:#FFFFFF;
+body {
+    background-color: #FFFFFF;
+    font-family: "Tahoma";
+    font-size: 12px;
+    color: #FFFFFF;
 }
 
-#main{
-	margin:0 auto;
-	margin-top:80px;
-	width:480px;
-}
-.clearer{
-	clear:both;
-	float:none;
+#main {
+    margin: 0 auto;
+    margin-top: 80px;
+    width: 480px;
 }
 
-#header{
-	padding:15px;
-	padding-left:30px;
-	padding-top:20px;
-	height:51px;
-	-moz-border-radius-topleft:7px;
-	-moz-border-radius-topright:7px;
-	font-size : 26px;
-	text-align:center;
-	background-color: #FFFF00;
-	background-image: url(images/head.png);
+.clearer {
+    clear: both;
+    float: none;
 }
 
-#footer{
-	padding:18px;
-	text-align:right;
-	color:#ffffff;
-	background-color: #F99F15;
+#header {
+    padding: 15px;
+    padding-left: 30px;
+    padding-top: 20px;
+    height: 51px;
+    -moz-border-radius-topleft: 7px;
+    -moz-border-radius-topright: 7px;
+    font-size: 26px;
+    text-align: center;
+    background-color: #FFFF00;
+    background-image: url(images/head.png);
 }
 
-#middle{
-	background-image:url(images/header.png);
-	padding-left:85px;
-	padding-top:20px;
-	padding-right: 15px;
-	padding-bottom: 15px;
+#footer {
+    padding: 18px;
+    text-align: right;
+    color: #ffffff;
+    background-color: #F99F15;
 }
 
-#vertical_effect{
-	height:80px;
-	margin-top:2px;
+#middle {
+    background-image: url(images/header.png);
+    padding-left: 85px;
+    padding-top: 20px;
+    padding-right: 15px;
+    padding-bottom: 15px;
 }
 
-#form-login{
-	margin:0;
+#vertical_effect {
+    height: 80px;
+    margin-top: 2px;
 }
 
-#input{
-	background-color:#FFFFFF;
-	background-image:url(images/images_login/bg_login_input.gif);
-	padding:7px;
-	padding-bottom:8px;
-	padding-top:8px;
-	font-family:Verdana;
-	font-size:12px;
-	color:#666666;	
-	border:1px solid #2b2448;
-	-moz-border-radius:3px;
-	font-weight:bold
+#form-login {
+    margin: 0;
 }
 
-#input:focus{
-	border:3px solid #2a2443;
-	margin-left:-2px;
-	-moz-border-radius:5px;
+#input {
+    background-color: #FFFFFF;
+    background-image: url(images/images_login/bg_login_input.gif);
+    padding: 7px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-family: Verdana;
+    font-size: 12px;
+    color: #666666;
+    border: 1px solid #2b2448;
+    -moz-border-radius: 3px;
+    font-weight: bold
 }
 
-#submit{
-	margin-top:4px; margin-left:41px; margin-bottom:7px; margin-right:2px;
+#input:focus {
+    border: 3px solid #2a2443;
+    margin-left: -2px;
+    -moz-border-radius: 5px;
 }
 
-.img_user{
-	margin-right:3px; margin-bottom:4px; 
+#submit {
+    margin-top: 4px;
+    margin-left: 41px;
+    margin-bottom: 7px;
+    margin-right: 2px;
 }
 
-.img_pass{
-	margin-right:4px; margin-left:2px; margin-bottom:6px; margin-top:1px;
-}
-.img_lock{
-	margin-right:4px; margin-bottom:3px; margin-left:4px; 
+.img_user {
+    margin-right: 3px;
+    margin-bottom: 4px;
 }
 
-a.forgot{
-	color:#FFFFFF;
-	text-decoration:none;
+.img_pass {
+    margin-right: 4px;
+    margin-left: 2px;
+    margin-bottom: 6px;
+    margin-top: 1px;
 }
 
-a.forgot:hover{
-	color:#4b4d77;
+.img_lock {
+    margin-right: 4px;
+    margin-bottom: 3px;
+    margin-left: 4px;
+}
+
+a.forgot {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a.forgot:hover {
+    color: #4b4d77;
 }
 
 /* Error Login */
-#error_login{
-	background-color:#461f95;
-	background-image:url(images/images_login/bg_login_error.gif);
-	padding:15px;
-	padding-bottom:15px;
-	font-family:Tahoma;
-	font-weight:bold;
-	padding-top:11px;
-	-moz-border-radius:4px;
+#error_login {
+    background-color: #461f95;
+    background-image: url(images/images_login/bg_login_error.gif);
+    padding: 15px;
+    padding-bottom: 15px;
+    font-family: Tahoma;
+    font-weight: bold;
+    padding-top: 11px;
+    -moz-border-radius: 4px;
 }
 
-a.clickhere{
-	color:#fcfa5f;
-	text-decoration:none;
+a.clickhere {
+    color: #fcfa5f;
+    text-decoration: none;
 }
 
-a.clickhere:hover{
-	color:#4b4d77;
+a.clickhere:hover {
+    color: #4b4d77;
 }

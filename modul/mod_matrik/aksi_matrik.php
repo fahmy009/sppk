@@ -1,21 +1,20 @@
 <?php
 session_start();
-if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])){
-  echo "<link href='style.css' rel='stylesheet' type='text/css'>
+if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])) {
+    echo "<link href='style.css' rel='stylesheet' type='text/css'>
  <center>Untuk mengakses modul, Anda harus login <br>";
-  echo "<a href=../../index.php><b>LOGIN</b></a></center>";
-}
-else{
-include "../../../config/koneksi.php";
+    echo "<a href=../../index.php><b>LOGIN</b></a></center>";
+} else {
+    include "../../../config/koneksi.php";
 
-$module=$_GET[module];
-$act=$_GET[act];
+    $module = $_GET[module];
+    $act = $_GET[act];
 
 // Hapus Data Nilai Matriks
-if ($module=='matrik' AND $act=='hapus'){
-  mysql_query("DELETE FROM matrik WHERE id_matrik='$_GET[id]'");
-  header('location:../../media.php?module='.$module);
-}
+    if ($module == 'matrik' AND $act == 'hapus') {
+        mysqli_query($con, "DELETE FROM matrik WHERE id_matrik='$_GET[id]'");
+        header('location:../../media.php?module=' . $module);
+    }
 
 }
 ?>
